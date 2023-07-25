@@ -33,13 +33,12 @@ const storage = multer.diskStorage({
         cb(null, 'inputs/images')
     },
     filename: function (req, file, cb) {
-        const uniqueSuffix = Date.now()
-        cb(null, uniqueSuffix + '-' + file.originalname)
+        cb(null, file.originalname)
     }
 })
 
 const fileFilter = (req, file, cb) => {
-    if (file.mimetype === 'image/png'|| file.mimetype === 'image/jpg'|| file.mimetype === 'image/jpeg'|| file.mimetype === 'image/avif') {
+    if (file.mimetype === 'image/png' || file.mimetype === 'image/jpg' || file.mimetype === 'image/jpeg' || file.mimetype === 'image/avif') {
         cb(null, true)
     } else {
         cb(null, false)
