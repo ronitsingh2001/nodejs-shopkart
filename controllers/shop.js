@@ -8,7 +8,7 @@ const Order = require('../models/order')
 
 // const stripe = require('stripe')('sk_test_51NOF2HSIMciTFZ5IOlRH0cCxTiVebf2pGtC5Cyr4phWBHiyLNci87axvYYgXhCPmZTg54WajwY9aIZrsqKw9mtOz002GvPmK54')
 
-const ITEM_PER_PAGE = 2;
+const ITEM_PER_PAGE = 8;
 
 
 exports.getProducts = (req, res, next) => {
