@@ -9,13 +9,13 @@
                     <%= product.title %>
                 </h1>
                 <hr>
-                <div style="margin: auto;">
-                    <img src="/<%= product.imageUrl %>" alt="<%= product.title %>">
+                <div style="margin: auto; max-width: 500px;">
+                    <img style="width: 100%; border-radius: 12px" src="/<%= product.imageUrl %>" alt="<%= product.title %>">
                 </div>
                 <h2>$
                     <%= product.price %>
                 </h2>
-                <p>
+                <p style="font-size: 1.2rem; font-weight: 700;">
                     <%= product.description %>
                 </p>
                 <% if(isAuthenticated){ %>

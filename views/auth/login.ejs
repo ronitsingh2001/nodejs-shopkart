@@ -26,11 +26,11 @@
                             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                             <button class="btn" type="submit">
                                 Login
-                            </button>
+                            </button> | 
+                            <a class="btn <%= validationError.find(e => e.path === 'password') ? '' :'dead' %>"  role="button"  href="/reset">Reset Password</a>
+
+
                         </form>
-                        <div class="centered">
-                            <a href="/reset">Reset Password</a>
-                        </div>
             </main>
 
             <%- include('../includes/end.ejs') %>

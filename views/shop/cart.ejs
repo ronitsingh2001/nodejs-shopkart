@@ -8,6 +8,7 @@
             <main>
                 <% if(products.length> 0){ %>
                     <ul class="cart__item-list">
+                        <h1>Your <img style="width: 35px;vertical-align:middle;" src="/favicon.ico" alt="Your Cart"></h1>
                         <% products.forEach(p=> { %>
                             <li class="cart__item">
                                 <h1>
@@ -35,7 +36,7 @@
 
                     </ul>
                     <% } else { %>
-                        <h1>No Product in the cart</h1>
+                        <h1>Your <img style="width: 35px;vertical-align:middle;" src="/favicon.ico" alt="Cart"> is empty!</h1>
                         <% } %>
             </main>
             <%- include('../includes/end.ejs') %>

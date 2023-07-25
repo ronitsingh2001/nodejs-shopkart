@@ -2,6 +2,8 @@
     "env":{
         "MONGO_USER":"ronit2001krish",
         "MONGO_PASSWORD":"kkNCbvJXytrV5fFe",
-        "MONGO_DB":"shop"
+        "MONGO_DB":"shop",
+        "ACC_SID": "AC5beab56d088f42e0e8cf3e933ce392b8",
+        "AUTH_TOKEN": "34154ce2b18dd7a8e9f99f75b78798b6"
     }
 }

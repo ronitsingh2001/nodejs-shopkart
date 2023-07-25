@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
+:root {
+  --blue-color: #2f3c7e;
+  --white: #fff;
+  --pinky-color: #FBEAEB;
+  --black-color: #101820;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,7 +14,12 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  background-image: url("../bg-tablet-pattern.svg");
+  background-position: 30% 100%;
+  /* background-size: 200px; */
+  background-repeat: repeat-y;
 }
 
 main {
@@ -34,16 +46,16 @@ form {
 .main-header {
   width: 100%;
   height: 3.5rem;
-  background-color: #00695c;
+  background-color: var(--blue-color);
   padding: 0 1.5rem;
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .main-header__nav {
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
 }
@@ -66,7 +78,9 @@ form {
   background: transparent;
   border: none;
   text-decoration: none;
-  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--white);
   cursor: pointer;
 }
 
@@ -85,7 +99,7 @@ form {
   position: fixed;
   left: 0;
   top: 0;
-  background: white;
+  background: var(--white);
   z-index: 10;
   padding: 2rem 1rem 1rem 2rem;
   transform: translateX(-100%);
@@ -111,7 +125,7 @@ form {
 
 .mobile-nav__item a {
   text-decoration: none;
-  color: black;
+  color: var(--black-color);
   font-size: 1.5rem;
   padding: 0.5rem 2rem;
 }
@@ -119,18 +133,21 @@ form {
 .mobile-nav__item a:active,
 .mobile-nav__item a:hover,
 .mobile-nav__item a.active {
-  background: #00695c;
-  color: white;
+  background: var(--blue-color);
+  color: var(--white);
   border-radius: 3px;
 }
 
 #side-menu-toggle {
-  border: 1px solid white;
+  border: 1px solid var(--white);
   font: inherit;
   padding: 0.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
   display: block;
   background: transparent;
-  color: white;
+  color: var(--white);
   cursor: pointer;
 }
 
@@ -180,11 +197,18 @@ form {
 
 .card__image {
   width: 100%;
+  height: 200px;
+  overflow-y: hidden;
 }
 
 .card__image img {
   width: 100%;
-  max-height: 212px;
+  height: auto;
+}
+
+.card__image img:hover{
+  transform: translateY(-10%);
+  transition: all ease-in-out 0.5s;
 }
 
 .card__actions {
@@ -202,17 +226,19 @@ form {
   padding: 0.25rem 1rem;
   text-decoration: none;
   font: inherit;
-  border: 1px solid #00695c;
-  color: #00695c;
-  background: white;
+  border: 1px solid var(--blue-color);
+  color: var(--blue-color);
+  background: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
   border-radius: 3px;
   cursor: pointer;
 }
 
 .btn:hover,
 .btn:active {
-  background-color: #00695c;
-  color: white;
+  background-color: var(--blue-color);
+  color: var(--white);
 }
 
 .btn.danger {
@@ -223,6 +249,16 @@ form {
 .btn.danger:hover,
 .btn.danger:active {
   background: red;
+  color: var(--white);
+}
+.btn.success{
+  border-color: green;
+  color: green;
+  font-size: 1.3rem;
+}
+.btn.success:hover,
+.btn.success:active{
+  background-color: rgb(23, 184, 44);
   color: white;
 }
 
@@ -234,12 +270,14 @@ form {
   border-radius: 5px;
   padding: 0.5rem;
   text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .user-message--error {
   border-color: red;
-  background: lightcoral;
-  color: white;
+  background: rgb(248, 155, 155);
+  color: var(--blue-color);
 }
 
 .pagination {
@@ -249,18 +287,23 @@ form {
 
 .pagination a {
   text-decoration: none;
-  color: #00695c;
-  padding: 0.5rem;
-  border: 1px solid #00695c;
+  color: var(--blue-color);
+  padding: 0.5rem ;
+  border: 1px solid var(--blue-color);
+  border-radius: 5px;
   margin: 0 0.5rem;
 }
 
 .pagination a:hover,
 .pagination a:active,
-.pagination a.active
- {
-  background: #00695c;
+.pagination a.active {
+  background: var(--blue-color);
   color: #fff;
+}
+
+.dead {
+  pointer-events: none;
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -270,6 +313,15 @@ form {
 
   #side-menu-toggle {
     display: none;
+  }
+
+  .mobile-nav.open {
+    transform: translateX(-100%);
+  }
+
+  .backdrop {
+    transform: translateX(-100%);
+
   }
 
   .user-message {

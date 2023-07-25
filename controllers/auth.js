@@ -3,7 +3,7 @@ const bcryptjs = require('bcryptjs');
 const User = require('../models/user');
 
 const accountSid = 'AC5beab56d088f42e0e8cf3e933ce392b8';
-const authToken = '3dfe0d4c263cf5f0a6d3e4a107f81a1b';
+const authToken = '34154ce2b18dd7a8e9f99f75b78798b6';
 const client = require('twilio')(accountSid, authToken);
 
 const { validationResult } = require('express-validator')
@@ -158,7 +158,6 @@ exports.postSignup = (req, res, next) => {
         },
         validationError: []
       });
-      console.log(email)
       return client.messages
         .create({
           body: 'Signup Successfully',
