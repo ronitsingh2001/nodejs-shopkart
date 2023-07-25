@@ -30,7 +30,7 @@ const store = new mongodbStore({
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'data/images')
+        cb(null, 'inputs/images')
     },
     filename: function (req, file, cb) {
         const uniqueSuffix = Date.now()
@@ -75,7 +75,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // ********* Serving files data statically ****************
 app.use(express.static(path.join(__dirname, 'public')))
-app.use('/data', express.static(path.join(__dirname, 'data')))
+app.use('/inputs', express.static(path.join(__dirname, 'inputs')))
 
 // ******Storing session***********
 app.use(session({

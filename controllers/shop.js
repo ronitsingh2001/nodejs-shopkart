@@ -216,7 +216,7 @@ exports.getInvoice = (req, res, next) => {
                 return next(new Error('Unauthorized'));
             }
             const invoiceName = 'invoice-' + orderId + '.pdf';
-            const invoicePath = path.join('data', 'invoices', invoiceName);
+            const invoicePath = path.join('inputs', 'invoices', invoiceName);
 
             res.setHeader('Content-Type', 'application/pdf');
             res.setHeader(
