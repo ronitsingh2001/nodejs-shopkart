@@ -2,9 +2,8 @@ const crypto = require('crypto');
 const bcryptjs = require('bcryptjs');
 const User = require('../models/user');
 
-const accountSid = 'AC5beab56d088f42e0e8cf3e933ce392b8';
-const authToken = '34154ce2b18dd7a8e9f99f75b78798b6';
-const client = require('twilio')(accountSid, authToken);
+
+const client = require('twilio')(process.env.ACC_SID, process.env.AUTH_TOKEN);
 
 const { validationResult } = require('express-validator')
 
@@ -161,7 +160,7 @@ exports.postSignup = (req, res, next) => {
       return client.messages
         .create({
           body: 'Signup Successfully',
-          from: '+19894479393',
+          from: "19894479393",
           to: `+91${phone}`
         })
         .then(message => console.log(message.sid))
@@ -224,7 +223,7 @@ exports.postReset = (req, res, next) => {
               body: `
                 You have requested a password reset. To set a new password click on - http://localhost:3000/reset/${token}
               `,
-              from: '+19894479393',
+              from: "19894479393",
               to: `+91${user.phone}`
             })
             .then(message => console.log(message.sid))
@@ -307,7 +306,7 @@ exports.postNewPassword = (req, res, next) => {
       client.messages
         .create({
           body: 'Password updated Successfully',
-          from: '+19894479393',
+          from: "19894479393",
           to: `+91${resetUser.phone}`
         })
         .then(message => console.log(message.sid))

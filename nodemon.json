@@ -4,6 +4,7 @@
         "MONGO_PASSWORD":"kkNCbvJXytrV5fFe",
         "MONGO_DB":"production-shop",
         "ACC_SID": "AC5beab56d088f42e0e8cf3e933ce392b8",
-        "AUTH_TOKEN": "34154ce2b18dd7a8e9f99f75b78798b6"
+        "AUTH_TOKEN": "80e26b962a426bf4f3dd82ff869ccd1c",
+        "PHONE_NO":"+19894479393"
     }
 }
